@@ -16,7 +16,6 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -37,12 +36,10 @@
         <TextBox Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="2" TextAlignment="Right" 
                  VerticalContentAlignment="Bottom" Text="{Binding Result}"></TextBox>
         
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="5" Grid.Column="0" FontStyle="Italic"></TextBlock>
-        
-        <Button Grid.Row="4" Grid.Column="0" Content="+" Command="{Binding AddCommand}"></Button>
-        <Button Grid.Row="4" Grid.Column="1" Content="-" Command="{Binding SubstractCommand}"></Button>
-        <Button Grid.Row="4" Grid.Column="2" Content="*" Command="{Binding MultiplyCommand}"></Button>
-        <Button Grid.Row="4" Grid.Column="3" Content="/" Command="{Binding DivideCommand}"></Button>
-        <Button Grid.Row="4" Grid.Column="4" Content="Sqrt" Command="{Binding SqrtCommand}"></Button>
+        <Button Grid.Row="3" Grid.Column="0" Content="+" Command="{Binding AddCommand}"></Button>
+        <Button Grid.Row="3" Grid.Column="1" Content="-" Command="{Binding SubstractCommand}"></Button>
+        <Button Grid.Row="3" Grid.Column="2" Content="*" Command="{Binding MultiplyCommand}"></Button>
+        <Button Grid.Row="3" Grid.Column="3" Content="/" Command="{Binding DivideCommand}"></Button>
+        <Button Grid.Row="3" Grid.Column="4" Content="Sqrt" Command="{Binding SqrtCommand}"></Button>
     </Grid>
 </Window>

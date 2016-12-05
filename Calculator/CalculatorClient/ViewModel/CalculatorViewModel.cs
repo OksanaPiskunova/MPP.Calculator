@@ -18,8 +18,8 @@ namespace CalculatorClient.ViewModel
 
         private double _firstNumber;
         private double _secondNumber;
-        private double _result;
-        
+        private string _result;
+
         public double FirstNumber
         {
             get { return _firstNumber; }
@@ -46,23 +46,23 @@ namespace CalculatorClient.ViewModel
             }
         }
 
-        public double Result
+        public string Result
         {
             get { return _result; }
             set
             {
-                if (!_result.Equals(value))
+                if (_result != value)
                 {
                     _result = value;
                     OnPropertyChanged();
                 }
             }
         }
-        
+
         public CalculatorViewModel()
         {
             _calculatorModel = new CalculatorModel();
-            
+
             InitializeCommands();
         }
 
@@ -75,7 +75,7 @@ namespace CalculatorClient.ViewModel
             SqrtCommand = InitializeCommand(Sqrt);
         }
 
-        private CalculationCommand InitializeCommand(Func<double> method)
+        private CalculationCommand InitializeCommand(Func<string> method)
         {
             return new CalculationCommand(
                 () =>
@@ -89,27 +89,27 @@ namespace CalculatorClient.ViewModel
                 });
         }
 
-        private double Add()
+        private string Add()
         {
             return _calculatorModel.Add(_firstNumber, _secondNumber);
         }
 
-        private double Substract()
+        private string Substract()
         {
             return _calculatorModel.Substract(_firstNumber, _secondNumber);
         }
 
-        private double Multiply()
+        private string Multiply()
         {
             return _calculatorModel.Multiply(_firstNumber, _secondNumber);
         }
 
-        private double Divide()
+        private string Divide()
         {
             return _calculatorModel.Divide(_firstNumber, _secondNumber);
         }
 
-        private double Sqrt()
+        private string Sqrt()
         {
             return _calculatorModel.Sqrt(_firstNumber);
         }
